@@ -1,0 +1,41 @@
+name: Check which data sources respond
+
+# Phase 1 data proof. Runs the probe from a GitHub runner and commits the
+# report (PROBE.md, probe_report.json) so we know which sources the daily
+# pipeline can rely on. Run it again any time from the Actions tab.
+on:
+  push:
+    branches: [main]
+    paths: ['probe_sources.py', '.github/workflows/probe.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe the sources
+        run: python3 probe_sources.py
+      - name: Commit the report
+        run: |
+          git config user.name "nba-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add PROBE.md probe_report.json
+          if git diff --cached --quiet; then
+            echo "No change."
+          else
+            git commit -m "Data source check: $(date -u '+%F %H:%M') UTC"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
