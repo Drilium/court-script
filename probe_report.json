@@ -1,0 +1,149 @@
+{
+ "generated": "2026-11-16 16:14 UTC",
+ "where": "GitHub Actions runner",
+ "results": [
+  {
+   "group": "NBA CDN",
+   "name": "Today's scoreboard",
+   "gives": "tonight's games and live scores",
+   "url": "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json",
+   "status": 403,
+   "bytes": 0,
+   "seconds": 0.07,
+   "ok": false,
+   "note": "Forbidden"
+  },
+  {
+   "group": "NBA CDN",
+   "name": "Season schedule",
+   "gives": "every game, date, status and game id",
+   "url": "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json",
+   "status": 403,
+   "bytes": 0,
+   "seconds": 0.04,
+   "ok": false,
+   "note": "Forbidden"
+  },
+  {
+   "group": "NBA stats site",
+   "name": "Player stats",
+   "gives": "season averages for every player",
+   "url": "https://stats.nba.com/stats/leaguedashplayerstats?MeasureType=Base&LastNGames=0&Month=0&OpponentTeamID=0&PaceAdjust=N&Period=0&PlusMinus=N&Rank=N&TeamID=0&Season=2026-27&SeasonType=Regular+Season&PerMode=PerGame&LeagueID=00",
+   "status": 0,
+   "bytes": 0,
+   "seconds": 25.08,
+   "ok": false,
+   "note": "TimeoutError: The read operation timed out"
+  },
+  {
+   "group": "NBA stats site",
+   "name": "Usage and advanced",
+   "gives": "usage rate, pace, efficiency",
+   "url": "https://stats.nba.com/stats/leaguedashplayerstats?MeasureType=Advanced&LastNGames=0&Month=0&OpponentTeamID=0&PaceAdjust=N&Period=0&PlusMinus=N&Rank=N&TeamID=0&Season=2026-27&SeasonType=Regular+Season&PerMode=PerGame&LeagueID=00",
+   "status": 0,
+   "bytes": 0,
+   "seconds": 25.06,
+   "ok": false,
+   "note": "TimeoutError: The read operation timed out"
+  },
+  {
+   "group": "NBA stats site",
+   "name": "Tracking: passing",
+   "gives": "potential assists",
+   "url": "https://stats.nba.com/stats/leaguedashptstats?PtMeasureType=Passing&PlayerOrTeam=Player&LastNGames=0&Month=0&OpponentTeamID=0&Season=2026-27&SeasonType=Regular+Season&PerMode=PerGame&LeagueID=00",
+   "status": 0,
+   "bytes": 0,
+   "seconds": 25.09,
+   "ok": false,
+   "note": "TimeoutError: The read operation timed out"
+  },
+  {
+   "group": "NBA stats site",
+   "name": "Tracking: rebounding",
+   "gives": "rebound chances",
+   "url": "https://stats.nba.com/stats/leaguedashptstats?PtMeasureType=Rebounding&PlayerOrTeam=Player&LastNGames=0&Month=0&OpponentTeamID=0&Season=2026-27&SeasonType=Regular+Season&PerMode=PerGame&LeagueID=00",
+   "status": 0,
+   "bytes": 0,
+   "seconds": 25.06,
+   "ok": false,
+   "note": "TimeoutError: The read operation timed out"
+  },
+  {
+   "group": "NBA stats site",
+   "name": "Defender matchups",
+   "gives": "who guarded whom, season totals",
+   "url": "https://stats.nba.com/stats/leagueseasonmatchups?Season=2026-27&SeasonType=Regular+Season&PerMode=PerGame&LeagueID=00",
+   "status": 0,
+   "bytes": 0,
+   "seconds": 25.08,
+   "ok": false,
+   "note": "TimeoutError: The read operation timed out"
+  },
+  {
+   "group": "NBA stats site",
+   "name": "Game log",
+   "gives": "every player's line in every game",
+   "url": "https://stats.nba.com/stats/leaguegamelog?Counter=0&Direction=DESC&PlayerOrTeam=P&Season=2026-27&SeasonType=Regular+Season&Sorter=DATE&LeagueID=00",
+   "status": 0,
+   "bytes": 0,
+   "seconds": 25.03,
+   "ok": false,
+   "note": "TimeoutError: The read operation timed out"
+  },
+  {
+   "group": "Injuries",
+   "name": "Official injury report (PDF)",
+   "gives": "every status and reason, reissued through the day",
+   "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-16_11_00AM.pdf",
+   "status": 200,
+   "bytes": 93076,
+   "seconds": 0.06,
+   "ok": true,
+   "note": "latest found: 2026-11-16 11_00AM"
+  },
+  {
+   "group": "ESPN",
+   "name": "Scoreboard",
+   "gives": "schedule, scores, lines",
+   "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
+   "status": 200,
+   "bytes": 159589,
+   "seconds": 0.06,
+   "ok": true,
+   "note": "8 games"
+  },
+  {
+   "group": "ESPN",
+   "name": "Injuries",
+   "gives": "status and notes for every team",
+   "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
+   "status": 200,
+   "bytes": 1157669,
+   "seconds": 0.03,
+   "ok": true,
+   "note": "27 teams"
+  },
+  {
+   "group": "ESPN",
+   "name": "Game summary",
+   "gives": "box score and play-by-play",
+   "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909994",
+   "status": 200,
+   "bytes": 126155,
+   "seconds": 0.04,
+   "ok": true,
+   "note": "0 plays"
+  },
+  {
+   "group": "GitHub bulk data",
+   "name": "shufinskiy/nba_data index",
+   "gives": "play-by-play, shots and matchups for past seasons",
+   "url": "https://raw.githubusercontent.com/shufinskiy/nba_data/main/list_data.txt",
+   "status": 200,
+   "bytes": 52430,
+   "seconds": 0.04,
+   "ok": true,
+   "note": "past seasons only (latest NBA season listed: 2025-26)"
+  }
+ ]
+}
